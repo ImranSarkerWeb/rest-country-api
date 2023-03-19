@@ -20,7 +20,7 @@ const createUi = ({ name, flags, area }) => {
   return `
     <div class="country">
         <h2>${name.common}</h2>
-        <p>${area}</p>
+        <p>Area: ${area}</p>
         <img src="${flags.png}"/>
     </div>
     `;
