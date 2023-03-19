@@ -13,13 +13,39 @@ const displayCountries = (countries) => {
   countryDiv.innerHTML = allCountriesHtml.join(" ");
 };
 
-const createUi = (country) => {
+//destructuring option 2
+const createUi = ({ name, flags, area }) => {
+  //you must have to use curly braces when use object destructuring
+  //   console.log(name, flags, area);
   return `
     <div class="country">
-        <h2>${country.name.common}</h2>
-        <img src="${country.flags.png}"/>
+        <h2>${name.common}</h2>
+        <p>${area}</p>
+        <img src="${flags.png}"/>
     </div>
     `;
 };
+
+//destructuring option 1
+// const createUi = (country) => {
+//   const { name, flags } = country;
+
+//   return `
+//     <div class="country">
+//         <h2>${name.common}</h2>
+//         <img src="${flags.png}"/>
+//     </div>
+//     `;
+// };
+
+//without destructring
+// const createUi = (country) => {
+//   return `
+//     <div class="country">
+//         <h2>${country.name.common}</h2>
+//         <img src="${country.flags.png}"/>
+//     </div>
+//     `;
+// };
 
 getCountries();
